@@ -16,6 +16,7 @@ const keyReturn = function(event) {
 
 // Write a named function with event handler properties
 let eventAssignment = function(note) {
+// Anonymous functions
   note.onmousedown = function() {
     keyPlay(event);
   }
@@ -23,6 +24,14 @@ let eventAssignment = function(note) {
     keyReturn(event);
   }
 }
+/* Alternative using callback references:
+
+let eventAssignment = function(note) {
+  note.onmousedown = keyPlay;
+  note.onmouseup = keyReturn;
+}
+
+*/
 
 
 // Write a loop that runs the array elements through the function
